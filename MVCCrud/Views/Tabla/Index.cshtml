@@ -1,0 +1,45 @@
+﻿@model List<MVCCrud.Models.viewModels.ListTablaViewModel>
+@{
+    ViewBag.Title = "Base de datos srtaguadalupe";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+
+<br />
+<div class="row" >
+    <div class="col-md-12">
+        <table class="table" style="background-color:aqua">
+            <tr style="background-color:lightslategrey;color:azure">
+                <th>id</th>
+                <th>nombre</th>
+                <th>correo</th>
+                <th>fecha nacimiento</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var oElement in Model)
+            {
+                <tr style="background-color:lightgreen">
+                    <td>@oElement.Id</td>
+                    <td>@oElement.Nombre</td>
+                    <td>@oElement.Correo</td>
+                    <td>@oElement.Fecha_nacimiento</td>
+                    <td><a class="btn btn-default" href="~/Tabla/Editar/@oElement.Id">Editar</a></td>
+                    <td><a class="btn btn-danger" href="~/Tabla/Eliminar/@oElement.Id">Eliminar</a></td>
+                </tr>
+
+            }
+            <tr>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<div class="row" style="text-align:right;padding:5px;">
+    <a href="~/Tabla/Nuevo" class="btn btn-primary">Nuevo</a>
+
+</div>
+    
+
